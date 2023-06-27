@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage[final]{pdfpages} %Required Package
+% \usepackage{pdfpages}
+
+\begin{document}
+
+
+% Example #1: Combine Multiple PDF Files
+% \includepdf[pages={-}]{pdfOne.pdf} % Page: 1 to 10
+% \includepdf[pages={-}]{pdfTwo.pdf} % Page: 11 to 15
+% \includepdf[pages={-}]{pdfThree.pdf} % Page: 16 to 20
+
+
+% Example #2: Combine Only the First Page of Each PDF File
+% \includepdf{pdfOne.pdf} % Page: 1 to 10
+% \includepdf{pdfTwo.pdf} % Page: 11 to 15
+% \includepdf{pdfThree.pdf} % Page: 16 to 20
+
+
+% % Example #3: Using Multiple Commands
+\includepdf[pages={1,2,{},5}]{pdfOne.pdf} % Page: 1 to 10
+\includepdf[pages={3-5}]{pdfTwo.pdf} % Page: 11 to 15
+\includepdf[pages={last-1}]{pdfThree.pdf} % Page: 16 to 20
+
+
+\end{document}
+
+
+COMMAND
+----------------------
+Syntax:  \includepdf[key=val]{filename}
+1. [pages={-}] => First to Last, All Pages
+2.[pages={5-}] => 5th Page to Last Page
+3. [pages={-5}] => 1st Page to 5th Page
+4. [pages={2-5}] => Range: 2nd Page to 5th Page
+5. [pages={3,6,9}] => Select only the 3rd, 6th, and 9th Pages
+6. [pages={last}] => Select only the LAST Page
+7. [pages={last-5}] =>Select All Pages in Reverse Order: From last to Fifth.
+8. To INSERT EMPTY Pages Use -> {}
+EXAMPLE: 
+[pages={3,{},6-8,10}] -> will insert page 3, an empty page,and pages 6,7,8 and 10.
+
+
+
